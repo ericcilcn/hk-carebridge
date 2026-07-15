@@ -1,0 +1,22 @@
+{
+  "name": "quiet-clinical-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "assets:logo": "node scripts/generate-logo-assets.mjs",
+    "cms:seed": "node scripts/seed-directus.mjs"
+  },
+  "dependencies": {
+    "@directus/sdk": "^20.2.0",
+    "@phosphor-icons/web": "^2.1.2",
+    "astro": "^5.12.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.8.3"
+  }
+}

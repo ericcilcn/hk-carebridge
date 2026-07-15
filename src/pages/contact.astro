@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const wechatId = import.meta.env.PUBLIC_WECHAT_ID?.trim();
+---
+<BaseLayout title="微信咨询" description="微信咨询步骤、文字概况、信息确认和整理内容。">
+  <header class="page-hero"><div><h1>微信咨询</h1><p>微信咨询包括文字概况、信息确认和资料整理。</p></div><p class="page-hero-note">初次联系内容包括诊断、治疗经过和需要回答的问题。</p></header>
+  <section class="section" style="padding-top: 30px;">
+    <div class="contact-grid">
+      <div class="contact-details">
+        <h2>联系所需信息</h2>
+        <ol class="contact-prompts">
+          <li><span>01</span><div><strong>目前诊断</strong><p>诊断名称、目前阶段和尚未确认的信息。</p></div></li>
+          <li><span>02</span><div><strong>治疗经过</strong><p>主要治疗、大致时间和最近一次重要变化。</p></div></li>
+          <li><span>03</span><div><strong>主要问题</strong><p>需要回答的问题，包括需补充的资料和正式就诊时需向医生确认的事项。</p></div></li>
+        </ol>
+        <div class="boundary-box"><strong>整理内容</strong><p>病情摘要框架、资料清单和就诊问题清单。</p></div>
+      </div>
+      <aside class="contact-panel">
+        <p>微信信息尚未接入。正式名称与二维码将在上线前补充，当前仅显示联系路径和提示文案。</p>
+        <div class="wechat-placeholder"><i class="ph ph-wechat-logo" aria-hidden="true"></i><div><strong>{wechatId || '微信二维码待接入'}</strong><small>正式微信信息将在上线前补充</small></div></div>
+      </aside>
+    </div>
+    <p class="contact-privacy">敏感信息提醒：报告、影像、姓名、身份证件、银行卡、账号密码等敏感资料不通过微信提交。</p>
+    <div class="consultation-steps">
+      <div class="section-heading compact-heading"><div><h2>咨询步骤</h2></div><p>流程由文字概况开始，经过信息确认后形成整理内容。</p></div>
+      <ol class="process-cards">
+        <li><span>01</span><strong>微信咨询</strong><p>咨询主题与主要问题。</p></li>
+        <li><span>02</span><strong>提交文字概况</strong><p>诊断、治疗经过和主要问题的文字概况。</p></li>
+        <li><span>03</span><strong>信息确认</strong><p>现有信息与待补信息的核对。</p></li>
+        <li><span>04</span><strong>整理内容</strong><p>病情摘要框架、资料清单和就诊问题清单。</p></li>
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

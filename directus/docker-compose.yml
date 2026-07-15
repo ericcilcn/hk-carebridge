@@ -1,0 +1,17 @@
+services:
+  directus:
+    image: directus/directus:11
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+    environment:
+      SECRET: replace-this-local-secret
+      ADMIN_EMAIL: admin@example.local
+      ADMIN_PASSWORD: change-me-before-use
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /directus/database/data.db
+      WEBSOCKETS_ENABLED: "true"
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "http://localhost:4321,http://localhost:4173"

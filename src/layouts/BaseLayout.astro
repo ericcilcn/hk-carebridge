@@ -1,0 +1,23 @@
+---
+import '@phosphor-icons/web/regular';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props { title: string; description?: string; }
+const { title, description = '港医桥/HK CareBridge，香港医疗信息与就医准备。' } = Astro.props;
+const fullTitle = `${title}｜港医桥/HK CareBridge`;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f5f1e8" />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="site-shell"><Header /><main id="main"><slot /></main><Footer /></div>
+  </body>
+</html>

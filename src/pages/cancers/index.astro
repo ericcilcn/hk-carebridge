@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCancerArticles } from '../../lib/directus';
+const articles = await getCancerArticles();
+---
+<BaseLayout title="癌症知识" description="各癌种的常见症状、病理、分期、检查、生物标志物和治疗方式。">
+  <header class="page-hero"><div><h1>癌症知识</h1><p>各癌种的常见症状、病理、分期、检查、生物标志物和治疗方式。</p></div></header>
+  <section class="section" style="padding-top: 30px;">
+    <div class="article-list-grid">{articles.map((article) => <ArticleCard article={article} base="cancers" />)}</div>
+  </section>
+</BaseLayout>

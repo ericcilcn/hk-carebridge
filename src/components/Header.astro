@@ -1,0 +1,120 @@
+---
+import { cancerArticles, drugArticles } from '../data/content';
+
+const path = Astro.url.pathname;
+const items = [
+  { label: '首页', href: '/', active: path === '/' },
+  { label: '药物资讯', href: '/drugs/', active: path.startsWith('/drugs/') },
+  { label: '第二诊疗意见', href: '/second-opinion/', active: path.startsWith('/second-opinion/') },
+  { label: '癌症知识', href: '/cancers/', active: path.startsWith('/cancers/') },
+];
+
+const searchItems = [
+  { title: '药物资讯', summary: '药物名称、作用、适应证、剂型、不良反应、警示症状和治疗监测。', href: '/drugs/', keywords: '药品 药物 资讯 治疗 风险' },
+  { title: '第二诊疗意见', summary: '病情概况、现有资料和需要医生回答的问题。', href: '/second-opinion/', keywords: '第二意见 病情 资料 问题' },
+  { title: '癌症知识', summary: '各癌种的病理、分期、生物标志物和治疗概念。', href: '/cancers/', keywords: '肿瘤 癌症 科普 病理 分期' },
+  { title: '微信咨询', summary: '微信咨询步骤、文字概况、信息确认和整理内容。', href: '/contact/', keywords: '微信 咨询 文字概况 信息确认 资料清单 就诊问题' },
+  ...drugArticles.map((article) => ({
+    title: article.title,
+    summary: article.summary,
+    href: `/drugs/${article.slug}/`,
+    keywords: `${article.category} ${article.eyebrow}`,
+  })),
+  ...cancerArticles.map((article) => ({
+    title: article.title,
+    summary: article.summary,
+    href: `/cancers/${article.slug}/`,
+    keywords: `${article.category} ${article.eyebrow}`,
+  })),
+];
+---
+<header class="site-header" data-header>
+  <a class="brand" href="/" aria-label="港医桥/HK CareBridge 首页">
+    <img class="brand-logo" src="/images/hk-carebridge-logo-horizontal-transparent.png" alt="" aria-hidden="true" />
+  </a>
+  <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" data-menu-toggle>
+    <i class="ph ph-list" aria-hidden="true"></i>
+  </button>
+  <nav class="nav" aria-label="主要导航" data-nav>
+    {items.map((item) => <a class:list={[item.active && 'active']} href={item.href}>{item.label}</a>)}
+    <button class="nav-search-toggle" type="button" aria-label="打开站内搜索" aria-expanded="false" aria-controls="site-search" data-search-toggle>
+      <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>搜索</span>
+    </button>
+    <a class="button button-small" href="/contact/">微信咨询 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+  </nav>
+
+  <section class="site-search" id="site-search" aria-label="站内搜索" data-site-search hidden>
+    <form class="site-search-form" role="search" data-search-form>
+      <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+      <label class="sr-only" for="site-search-input">搜索药物、癌种或第二诊疗意见</label>
+      <input id="site-search-input" type="search" placeholder="搜索药物、癌种或第二诊疗意见" autocomplete="off" data-search-input />
+      <button type="button" class="site-search-close" aria-label="关闭站内搜索" data-search-close><i class="ph ph-x" aria-hidden="true"></i></button>
+    </form>
+    <div class="site-search-results" data-search-results>
+      {searchItems.map((item) => (
+        <a class="site-search-result" href={item.href} data-search-item data-search-text={`${item.title} ${item.summary} ${item.keywords}`}>
+          <strong>{item.title}</strong><span>{item.summary}</span>
+        </a>
+      ))}
+    </div>
+    <p class="site-search-empty" data-search-empty hidden>没有找到相关内容，请尝试药物通用名或癌种名称。</p>
+  </section>
+</header>
+<script>
+  const header = document.querySelector('[data-header]');
+  const menuToggle = header?.querySelector('[data-menu-toggle]');
+  const nav = header?.querySelector('[data-nav]');
+  const searchToggle = header?.querySelector('[data-search-toggle]');
+  const searchPanel = header?.querySelector('[data-site-search]');
+  const searchForm = header?.querySelector('[data-search-form]');
+  const searchInput = header?.querySelector('[data-search-input]');
+  const searchClose = header?.querySelector('[data-search-close]');
+  const searchItems = [...(header?.querySelectorAll('[data-search-item]') ?? [])];
+  const searchEmpty = header?.querySelector('[data-search-empty]');
+
+  const closeSearch = () => {
+    if (!(searchPanel instanceof HTMLElement)) return;
+    searchPanel.hidden = true;
+    searchToggle?.setAttribute('aria-expanded', 'false');
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    const open = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('open', !open);
+    if (!open) closeSearch();
+  });
+
+  searchToggle?.addEventListener('click', () => {
+    if (!(searchPanel instanceof HTMLElement)) return;
+    const open = searchPanel.hidden;
+    searchPanel.hidden = !open;
+    searchToggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      nav?.classList.remove('open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      requestAnimationFrame(() => {
+        if (searchInput instanceof HTMLInputElement) searchInput.focus();
+      });
+    }
+  });
+
+  searchClose?.addEventListener('click', closeSearch);
+  searchForm?.addEventListener('submit', (event) => event.preventDefault());
+  searchInput?.addEventListener('input', () => {
+    if (!(searchInput instanceof HTMLInputElement)) return;
+    const query = searchInput.value.trim().toLocaleLowerCase('zh-CN');
+    let visible = 0;
+    searchItems.forEach((item) => {
+      if (!(item instanceof HTMLElement)) return;
+      const text = (item.dataset.searchText ?? '').toLocaleLowerCase('zh-CN');
+      item.hidden = Boolean(query) && !text.includes(query);
+      if (!item.hidden) visible += 1;
+    });
+    if (searchEmpty instanceof HTMLElement) searchEmpty.hidden = visible !== 0;
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeSearch();
+  });
+</script>

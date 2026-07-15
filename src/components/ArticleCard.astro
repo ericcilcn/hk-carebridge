@@ -1,0 +1,19 @@
+---
+import type { Article } from '../data/content';
+interface Props { article: Article; base: 'drugs' | 'cancers'; }
+const { article, base } = Astro.props;
+---
+<article class:list={["article-card", base === "drugs" && "drug-article-card"]} data-category={article.category}>
+  <a
+    class:list={['article-card-image', base === 'drugs' && 'drug-card-image']}
+    href={`/${base}/${article.slug}/`}
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    <img src={article.heroImage.src} alt="" />
+  </a>
+  <div class="article-card-copy">
+    <h3><a href={`/${base}/${article.slug}/`}>{article.title}</a></h3>
+    <p class="article-card-summary">{article.summary}</p>
+  </div>
+</article>

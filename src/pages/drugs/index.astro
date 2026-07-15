@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getDrugArticles } from '../../lib/directus';
+const articles = await getDrugArticles();
+---
+<BaseLayout title="药物资讯" description="药物名称、作用、适应证、剂型、不良反应、警示症状和治疗监测资料。">
+  <header class="page-hero"><div><h1>药物资讯</h1><p>药物名称、作用、适应证、剂型、不良反应、警示症状和治疗监测资料。</p></div></header>
+  <section class="section" style="padding-top: 30px;">
+    <div class="article-list-grid">{articles.map((article) => <ArticleCard article={article} base="drugs" />)}</div>
+  </section>
+</BaseLayout>

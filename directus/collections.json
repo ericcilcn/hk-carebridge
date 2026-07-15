@@ -1,0 +1,6 @@
+{
+  "site_settings": ["brand_name", "tagline", "wechat_id", "wechat_qr", "medical_disclaimer", "seo_title", "seo_description"],
+  "drug_articles": ["status", "slug", "eyebrow", "title", "summary", "category", "updatedAt", "readingTime", "intro", "sections", "sources"],
+  "cancer_articles": ["status", "slug", "eyebrow", "title", "summary", "category", "updatedAt", "readingTime", "intro", "sections", "sources"],
+  "consultation_entries": ["status", "created_at", "name", "role", "diagnosis", "stage", "question", "consent_version"]
+}

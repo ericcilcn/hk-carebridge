@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-07-14",
+  "normalization": {
+    "canvas": "1500x1000",
+    "ratio": "3:2",
+    "format": "lossless WebP",
+    "background": "source-adaptive near-white, extended from source edge pixels",
+    "script": "scripts/normalize-drug-images.mjs"
+  },
+  "items": [
+    {
+      "slug": "pembrolizumab",
+      "target": "KEYTRUDA (pembrolizumab) injection, 100 mg/4 mL, single-dose vial, US pack",
+      "sourceFile": "sources/pembrolizumab-source.jpg",
+      "sourcePage": "https://www.drugs.com/imprints/medicine-32671.html",
+      "identityReference": "https://www.merck.com/product/usa/pi_circulars/k/keytruda/keytruda_pi.pdf",
+      "directImageUrl": "https://www.drugs.com/images/pills/custom/pill32671-2/keytruda-100-mg-4-ml-injection-medicine-114344.jpeg",
+      "nativeDimensions": "1400x1400",
+      "sha256": "cee4f833f5cad52e516679068bf8eee4ce6e1181886bad547f626542d3de301e",
+      "matchGrade": "A",
+      "marketVersion": "United States",
+      "qa": "Existing high-resolution source retained. Package text and NDC agree with the Merck prescribing information; subtle original warm-grey to white background retained."
+    },
+    {
+      "slug": "osimertinib",
+      "target": "TAGRISSO (osimertinib), 80 mg, 30 film-coated tablets",
+      "sourceFile": "sources/osimertinib-source.jpg",
+      "sourcePage": "https://www.sunstore.ch/fr/p/tagrisso-cpr-pell-80-mg-30-pce-6704831",
+      "identityReference": "https://www.tagrisso.com.hk/en/home.html",
+      "directImageUrl": "https://images.sunstore.ch/product-images/tagrisso-cpr-pell-80-mg-30-pce-main-001KDV.jpg",
+      "nativeDimensions": "1000x1000",
+      "sha256": "87629de9649c3b585209760f625a81d1d9c15ee76f4ff23cc27709cd4bb93d87",
+      "matchGrade": "B",
+      "marketVersion": "Switzerland; brand, generic name, strength, form, manufacturer and count match; market language differs from Hong Kong",
+      "qa": "Selected instead of the previous German catalogue JPEG because the previous file showed visible posterisation. Original off-white package colour and white source background retained."
+    },
+    {
+      "slug": "cyclophosphamide",
+      "target": "Baxter Endoxan (cyclophosphamide), 50 mg, 50 dragées",
+      "sourceFile": "sources/cyclophosphamide-source.jpg",
+      "sourcePage": "https://www.coopvitality.ch/de/p/endoxan-filmtabl-50-mg-50-stk-2585766",
+      "directImageUrl": "https://images.coopvitality.ch/product-images/endoxan-filmtabl-50-mg-50-stk-main-001JV7.jpg",
+      "nativeDimensions": "1000x1000",
+      "sha256": "cdc3fda978ee9dfd1ea107d7ede0995265ca8eea3ba3863b262691ca5ec59aff",
+      "matchGrade": "A",
+      "marketVersion": "Switzerland",
+      "qa": "Original clean white background retained. Empty margin cropped before proportional enlargement so the horizontal pack has visual weight comparable with the set."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+---
+import ArticlePage from '../../components/ArticlePage.astro';
+import { getDrugArticles } from '../../lib/directus';
+export async function getStaticPaths() { const articles = await getDrugArticles(); return articles.map((article) => ({ params: { slug: article.slug }, props: { article } })); }
+const { article } = Astro.props;
+---
+<ArticlePage article={article} />
