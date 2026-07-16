@@ -25,3 +25,10 @@ npm install
 npm run dev
 npm run build
 ```
+
+## 部署
+
+- 腾讯云 EdgeOne 使用默认站点地址 `https://hkcarebridge.com`。
+- 推送到 `main` 后，`.github/workflows/deploy.yml` 自动构建并部署 GitHub Pages。
+- GitHub Pages 测试域名为 `https://pages.hkcarebridge.com`，构建时通过 `SITE_URL` 覆盖站点地址。
+- DNS 中为 `pages` 添加 CNAME，记录值为 `ericcilcn.github.io`。
