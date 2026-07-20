@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-07-14",
+  "retrievedAt": "2026-07-20",
   "normalization": {
     "canvas": "1500x1000",
     "ratio": "3:2",
@@ -46,6 +46,58 @@
       "matchGrade": "A",
       "marketVersion": "Switzerland",
       "qa": "Original clean white background retained. Empty margin cropped before proportional enlargement so the horizontal pack has visual weight comparable with the set."
+    },
+    {
+      "slug": "tamoxifen",
+      "target": "NOLVADEX (tamoxifen), 20 mg, 20 tablets",
+      "sourceFile": "sources/tamoxifen-nolvadex-source.jpg",
+      "sourcePage": "https://www.mitiendaastrazeneca.com/34-nolvadex",
+      "identityReference": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=tamoxifen",
+      "directImageUrl": "https://www.mitiendaastrazeneca.com/312-large_default/nolvadexR-20-mg-caja-con-20-tabletas.jpg",
+      "nativeDimensions": "800x800",
+      "sha256": "b8dda6b53974ab22e360fb1e0bd28ce6cc648635467078c16cbfee20ca140867",
+      "matchGrade": "A",
+      "marketVersion": "Mexico",
+      "qa": "AstraZeneca official store image. Original white background and native package shadow retained; only empty margin, proportional scale and 3:2 canvas were changed."
+    },
+    {
+      "slug": "anastrozole",
+      "target": "Arimidex (anastrozole), 1 mg, 28 tablets",
+      "sourceFile": "sources/anastrozole-arimidex-source.png",
+      "sourcePage": "https://unitedpharmacy.sa/en/arimidex-1-mg-28-tablets.html",
+      "identityReference": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/020541s031lbl.pdf",
+      "directImageUrl": "https://imagenew.unitedpharmacy.sa/live/media/catalog/product/a/r/arimidex_1_mg_28_tablets_1.png",
+      "nativeDimensions": "800x800",
+      "sha256": "e1c252fe0dab8aa4576c26d8931220512306f8aae96ee5c5a91b6762a8019d56",
+      "matchGrade": "A",
+      "marketVersion": "Saudi Arabia",
+      "qa": "Clean pharmacy packshot with brand, generic name, strength, count and manufacturer visible. Original package colours and white background retained."
+    },
+    {
+      "slug": "capivasertib",
+      "target": "TRUQAP (capivasertib), 200 mg, 64 film-coated tablets",
+      "sourceFile": "sources/capivasertib-truqap-source.jpg",
+      "sourcePage": "https://www.shop-apotheke.com/marken/truqap/",
+      "identityReference": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d698c106-2322-401e-b738-cbd83c843ecf",
+      "directImageUrl": "https://cdn.shop-apotheke.com/images/1024x0/D19/283/176/D19283176-p10.jpg",
+      "nativeDimensions": "1024x1024",
+      "sha256": "6f77ebf7f364e45f24f4314486cced52d81570ffe15c6c88fad6f904022b555e",
+      "matchGrade": "A",
+      "marketVersion": "Germany",
+      "qa": "High-resolution clean packshot. Package text, strength, count and AstraZeneca branding remain unaltered; only proportional layout normalization was applied."
+    },
+    {
+      "slug": "zolbetuximab",
+      "target": "VYLOY (zolbetuximab), 100 mg vial and carton",
+      "sourceFile": "sources/zolbetuximab-vyloy-source.jpeg",
+      "sourcePage": "https://www.deutsche-apotheker-zeitung.de/pharmazie/arzneimittel/2025/01/22/zolbetuximab",
+      "identityReference": "https://www.astellas.com.cn/system/files/zolbetuximab-inf_chn-prescriber_china_20250103.pdf",
+      "directImageUrl": "https://c02.purpledshub.com/uploads/sites/86/2025/01/BILD_HIGHRES-283-1024x683.jpeg?w=1200",
+      "nativeDimensions": "1024x683",
+      "sha256": "ac76b445f352b323863825e11def399ab62ec15a433392ab233fa8649d5bb9b7",
+      "matchGrade": "A",
+      "marketVersion": "Germany / European Union",
+      "qa": "High-resolution carton-and-vial packshot on a near-white background. Product pixels and native contact shadow retained; empty margins were rebalanced for the 3:2 site canvas."
     }
   ]
 }
