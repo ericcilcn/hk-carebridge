@@ -1,0 +1,9 @@
+hkcarebridge.com {
+	root * /var/www/hkcarebridge
+	encode zstd gzip
+	file_server
+}
+
+www.hkcarebridge.com {
+	redir https://hkcarebridge.com{uri} permanent
+}
