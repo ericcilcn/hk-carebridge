@@ -2,12 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const wechatId = import.meta.env.PUBLIC_WECHAT_ID?.trim();
 ---
-<BaseLayout title="微信咨询" description="微信咨询步骤、文字概况、信息确认和整理内容。">
-  <header class="page-hero"><div><h1>微信咨询</h1><p>微信咨询包括文字概况、信息确认和资料整理。</p></div><p class="page-hero-note">初次联系内容包括诊断、治疗经过和需要回答的问题。</p></header>
+<BaseLayout title="微信询药与咨询" description="药物询问、第二诊疗意见及医疗资料整理的微信联系入口。">
+  <header class="page-hero"><div><h1>微信询药与咨询</h1><p>药物问题、第二诊疗意见和医疗资料整理共用同一微信联系方式。</p></div><p class="page-hero-note">初次联系可说明咨询主题、目前情况和需要确认的问题。</p></header>
   <section class="section" style="padding-top: 30px;">
     <div class="contact-grid">
       <div class="contact-details">
         <h2>联系所需信息</h2>
+        <div class="contact-topic-switch">
+          <article id="drug-inquiry">
+            <h3>微信询药</h3>
+            <p>药物名称、现有处方或治疗方案、当前用药情况和需要确认的问题。药物适用性由香港注册医生评估，具体供应由持牌药房或医疗机构处理。</p>
+            <a class="text-link" href="#wechat-contact">微信联系方式 <i class="ph ph-arrow-down" aria-hidden="true"></i></a>
+          </article>
+          <article id="general-consultation">
+            <h3>微信咨询</h3>
+            <p>目前诊断、治疗经过、现有资料和第二诊疗意见相关问题。</p>
+            <a class="text-link" href="#wechat-contact">微信联系方式 <i class="ph ph-arrow-down" aria-hidden="true"></i></a>
+          </article>
+        </div>
         <ol class="contact-prompts">
           <li><span>01</span><div><strong>目前诊断</strong><p>诊断名称、目前阶段和尚未确认的信息。</p></div></li>
           <li><span>02</span><div><strong>治疗经过</strong><p>主要治疗、大致时间和最近一次重要变化。</p></div></li>
@@ -15,7 +27,7 @@ const wechatId = import.meta.env.PUBLIC_WECHAT_ID?.trim();
         </ol>
         <div class="boundary-box"><strong>整理内容</strong><p>病情摘要框架、资料清单和就诊问题清单。</p></div>
       </div>
-      <aside class="contact-panel">
+      <aside class="contact-panel" id="wechat-contact">
         <p>微信信息尚未接入。正式名称与二维码将在上线前补充，当前仅显示联系路径和提示文案。</p>
         <div class="wechat-placeholder"><i class="ph ph-wechat-logo" aria-hidden="true"></i><div><strong>{wechatId || '微信二维码待接入'}</strong><small>正式微信信息将在上线前补充</small></div></div>
       </aside>

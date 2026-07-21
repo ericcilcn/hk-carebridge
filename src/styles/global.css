@@ -73,6 +73,18 @@ p { line-height: 1.78; }
 .hero-copy h1 .hero-title-line { display: block; color: inherit; }
 .hero-copy > p { max-width: 600px; color: var(--ink-soft); font-size: 17px; margin: 30px 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-drug-panel { min-width: 0; padding: 26px 28px 12px; background: #ebe6dc; border: 1px solid var(--line); }
+.hero-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 18px; }
+.hero-panel-heading h2 { font-size: 28px; }
+.hero-panel-heading > a { display: inline-flex; align-items: center; gap: 7px; color: var(--teal-deep); font-size: 12px; font-weight: 650; text-decoration: none; white-space: nowrap; }
+.hero-drug-list { border-top: 1px solid var(--line); }
+.hero-drug-item { min-width: 0; display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.hero-drug-image { display: block; aspect-ratio: 3 / 2; overflow: hidden; background: var(--drug-stage); border: 1px solid var(--line); }
+.hero-drug-image img { width: 100%; height: 100%; object-fit: cover; }
+.hero-drug-item h3 { font-size: 19px; }
+.hero-drug-item h3 a { text-decoration: none; }
+.hero-drug-item p { display: -webkit-box; margin: 6px 0 4px; overflow: hidden; color: var(--ink-soft); font-size: 12px; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.hero-drug-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal-deep); font-size: 11px; font-weight: 650; text-decoration: none; }
 .hero-media { position: relative; min-height: 580px; }
 .hero-media .image-main { position: absolute; width: 73%; right: 0; top: 0; box-shadow: var(--shadow); }
 .hero-media .image-detail { position: absolute; width: 49%; left: 0; bottom: 0; border: 10px solid var(--paper-bright); box-shadow: var(--shadow); }
@@ -87,6 +99,7 @@ p { line-height: 1.78; }
 .section-heading > p { max-width: 470px; margin: 0; color: var(--ink-soft); }
 .section-side { max-width: 470px; }
 .section-side > p { margin: 0; color: var(--ink-soft); }
+.section-actions { display: flex; justify-content: flex-end; margin-top: 34px; }
 .compact-heading h2 { font-size: clamp(30px, 3.4vw, 48px); }
 .principles { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
 .principle { padding: 34px 40px 20px 0; border-right: 1px solid var(--line); }
@@ -127,6 +140,12 @@ p { line-height: 1.78; }
 .second-opinion-feature .process-copy { padding: 52px 56px; }
 .second-opinion-feature .result-list { margin: 26px 0 30px; }
 .second-opinion-feature .result-list li { padding: 13px 0; }
+.consultation-feature { grid-template-columns: minmax(0, 1.08fr) minmax(390px, .92fr); }
+.consultation-media { min-width: 0; min-height: 0; overflow: hidden; }
+.consultation-media img { display: block; width: 100%; height: 100%; min-height: 0; max-height: none; object-fit: cover; object-position: center; }
+.consultation-feature .process-copy { padding: 52px 56px; }
+.consultation-feature .steps { margin: 26px 0 30px; }
+.consultation-feature .steps li { padding: 13px 0; }
 .button-light { background: var(--paper-bright); color: var(--ink); border-color: var(--paper-bright); }
 .button-light:hover { background: var(--teal); color: white; border-color: var(--teal); }
 .result-list { margin: 38px 0; padding: 0; list-style: none; }
@@ -193,6 +212,7 @@ p { line-height: 1.78; }
 .question-panel ol { margin: 30px 0 0; padding-left: 1.3em; }
 .question-panel li { padding-left: .45em; line-height: 1.7; }
 .question-panel li + li { margin-top: 14px; }
+.article-inquiry-button { margin-top: 30px; }
 .note { padding: 18px; border-left: 3px solid var(--coral); background: #eee7dc; }
 .related-section { padding-top: 80px; padding-bottom: 80px; }
 .related-grid { grid-template-columns: repeat(2, 1fr); }
@@ -217,6 +237,11 @@ p { line-height: 1.78; }
 .wechat-placeholder small { color: rgba(255,255,255,.6); margin-top: 4px; }
 .contact-details { padding: 16px 0; }
 .contact-details h2 { max-width: 620px; }
+.contact-topic-switch { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
+.contact-topic-switch article { min-width: 0; padding: 22px; background: rgba(251,250,246,.78); border: 1px solid var(--line); scroll-margin-top: 112px; }
+.contact-topic-switch h3 { font-size: 21px; }
+.contact-topic-switch p { margin: 9px 0 0; color: var(--ink-soft); font-size: 13px; }
+#wechat-contact { scroll-margin-top: 112px; }
 .contact-prompts { list-style: none; margin: 42px 0 0; padding: 0; }
 .contact-prompts li { display: grid; grid-template-columns: 44px 1fr; gap: 20px; padding: 24px 0; border-top: 1px solid var(--line); }
 .contact-prompts li > span { color: var(--coral); font-size: 12px; letter-spacing: .16em; }
@@ -261,6 +286,7 @@ p { line-height: 1.78; }
   .nav-search-toggle { min-height: 48px; justify-content: flex-start; padding: 0 10px; }
   .site-search { left: 16px; right: 16px; top: 84px; }
   .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 45px; }
+  .hero-drug-panel { width: 100%; }
   .hero-media { min-height: 550px; }
   .principles { grid-template-columns: 1fr; }
   .article-grid, .article-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -272,7 +298,8 @@ p { line-height: 1.78; }
   .feature-grid, .split, .process-feature, .contact-grid { grid-template-columns: 1fr; }
   .process-feature img, .split-media img { min-height: 460px; max-height: 620px; }
   .second-opinion-feature .second-opinion-media img,
-  .second-opinion-split .split-media img { height: auto; min-height: 0; max-height: none; aspect-ratio: 3 / 2; }
+  .second-opinion-split .split-media img,
+  .consultation-feature .consultation-media img { height: auto; min-height: 0; max-height: none; aspect-ratio: 3 / 2; }
   .page-hero { grid-template-columns: 1fr; gap: 34px; }
   .process-overview { grid-template-columns: 1fr; }
   .process-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -320,6 +347,10 @@ p { line-height: 1.78; }
   h1 { font-size: 44px; }
   .hero-copy h1 { font-size: 44px; }
   .hero-copy > p { font-size: 15px; }
+  .hero-drug-panel { padding: 22px 18px 8px; }
+  .hero-drug-item { grid-template-columns: 104px minmax(0, 1fr); gap: 15px; }
+  .hero-drug-item h3 { font-size: 17px; }
+  .hero-drug-item p { -webkit-line-clamp: 2; }
   .hero-media { min-height: 440px; }
   .hero-media .image-main { width: 80%; }
   .hero-media .image-detail { width: 55%; border-width: 6px; }
@@ -344,6 +375,7 @@ p { line-height: 1.78; }
   .process-cards li:last-child { border-bottom: 0; }
   .result-list li { grid-template-columns: 1fr; gap: 6px; }
   .contact-panel { padding: 32px 24px; }
+  .contact-topic-switch { grid-template-columns: 1fr; }
   .consult-form { grid-template-columns: 1fr; }
   .field-full { grid-column: auto; }
   .site-footer { padding: 54px 20px 36px; grid-template-columns: 1fr; gap: 38px; }

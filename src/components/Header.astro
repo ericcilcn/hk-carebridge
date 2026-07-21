@@ -13,7 +13,8 @@ const searchItems = [
   { title: '药物资讯', summary: '药物名称、作用、适应证、剂型、不良反应、警示症状和治疗监测。', href: '/drugs/', keywords: '药品 药物 资讯 治疗 风险' },
   { title: '第二诊疗意见', summary: '病情概况、现有资料和需要医生回答的问题。', href: '/second-opinion/', keywords: '第二意见 病情 资料 问题' },
   { title: '癌症知识', summary: '各癌种的病理、分期、生物标志物和治疗概念。', href: '/cancers/', keywords: '肿瘤 癌症 科普 病理 分期' },
-  { title: '微信咨询', summary: '微信咨询步骤、文字概况、信息确认和整理内容。', href: '/contact/', keywords: '微信 咨询 文字概况 信息确认 资料清单 就诊问题' },
+  { title: '微信询药', summary: '药物名称、当前用药情况和需要确认的药物问题。', href: '/contact/#drug-inquiry', keywords: '微信 询药 药物 香港药物 药房' },
+  { title: '微信咨询', summary: '微信咨询步骤、文字概况、信息确认和整理内容。', href: '/contact/#general-consultation', keywords: '微信 咨询 文字概况 信息确认 资料清单 就诊问题' },
   ...drugArticles.map((article) => ({
     title: article.title,
     summary: article.summary,
@@ -40,7 +41,7 @@ const searchItems = [
     <button class="nav-search-toggle" type="button" aria-label="打开站内搜索" aria-expanded="false" aria-controls="site-search" data-search-toggle>
       <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>搜索</span>
     </button>
-    <a class="button button-small" href="/contact/">微信咨询 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    <a class="button button-small" href="/contact/#general-consultation">微信咨询 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
   </nav>
 
   <section class="site-search" id="site-search" aria-label="站内搜索" data-site-search hidden>

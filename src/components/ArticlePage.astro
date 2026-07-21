@@ -82,6 +82,7 @@ const related = (base === 'drugs' ? drugArticles : cancerArticles)
         <section class="question-panel">
           <h2>就诊问题</h2>
           <ol>{article.questions.map((question) => <li>{question}</li>)}</ol>
+          {base === 'drugs' && <a class="button article-inquiry-button" href="/contact/#drug-inquiry">微信询药 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>}
         </section>
       </div>
     </div>
