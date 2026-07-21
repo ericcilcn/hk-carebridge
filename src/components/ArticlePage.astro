@@ -3,6 +3,7 @@ import type { Article } from '../data/content';
 import { cancerArticles, drugArticles } from '../data/content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from './ArticleCard.astro';
+import DrugTitle from './DrugTitle.astro';
 
 interface Props { article: Article; }
 const { article } = Astro.props;
@@ -15,7 +16,7 @@ const related = (base === 'drugs' ? drugArticles : cancerArticles)
 <BaseLayout title={article.title} description={article.summary}>
   <article class:list={['article-layout', base === 'drugs' && 'drug-article']}>
     <header class="article-header">
-      <h1>{article.title}</h1>
+      <h1>{base === 'drugs' ? <DrugTitle title={article.title} /> : article.title}</h1>
       <p class="article-header-summary">{article.summary}</p>
     </header>
 

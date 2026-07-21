@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const match = title.match(/^(.*?)（([^（）]+)）$/);
+const chineseName = match?.[1] ?? title;
+const englishName = match?.[2];
+---
+
+<span class="drug-title">
+  <span class="drug-title-cn">{chineseName}</span>
+  {englishName && <span class="drug-title-en">（{englishName}）</span>}
+</span>

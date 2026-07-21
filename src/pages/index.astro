@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import DrugTitle from '../components/DrugTitle.astro';
 import { featuredCancerSlugs, featuredDrugSlugs } from '../data/content';
 import { getCancerArticles, getDrugArticles } from '../lib/directus';
 const drugs = await getDrugArticles();
@@ -28,7 +29,7 @@ const featuredCancers = pickArticles(cancers, featuredCancerSlugs);
         {featuredDrugs.map((article) => (
           <article class="hero-drug-item">
             <a class="hero-drug-image" href={`/drugs/${article.slug}/`}><img src={article.heroImage.src} alt={article.heroImage.alt} /></a>
-            <div><h3><a href={`/drugs/${article.slug}/`}>{article.title}</a></h3><p>{article.summary}</p><a class="hero-drug-link" href={`/drugs/${article.slug}/`}>药物详情 <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+            <div><h3><a href={`/drugs/${article.slug}/`}><DrugTitle title={article.title} /></a></h3><p>{article.summary}</p><a class="hero-drug-link" href={`/drugs/${article.slug}/`}>药物详情 <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
           </article>
         ))}
       </div>
@@ -60,7 +61,7 @@ const featuredCancers = pickArticles(cancers, featuredCancerSlugs);
 
   <section class="section" id="wechat-consultation">
     <div class="process-feature consultation-feature">
-      <div class="consultation-media"><img src="/images/hero-doctor-consultation.jpg" alt="医生向患者和家属讲解医疗资料，桌面放有立体癌症标志摆件" /></div>
+      <div class="consultation-media"><img src="/images/wechat-consultation-preparation-3x2.jpg" alt="手机咨询界面旁整理着医疗问题和资料清单" /></div>
       <div class="process-copy">
         <h2>微信咨询</h2>
         <p>文字概况、信息确认和资料整理的联系流程。</p>

@@ -103,7 +103,7 @@ const drugArticleRecords: Article[] = [
     slug: 'osimertinib',
     eyebrow: '药物资讯 · 靶向治疗',
     title: '奥希替尼（Osimertinib）',
-    summary: '第三代 EGFR 靶向药，用于具有特定 EGFR 变异的非小细胞肺癌。',
+    summary: '第三代 EGFR 酪氨酸激酶抑制剂，用于具有特定 EGFR 变异的非小细胞肺癌。',
     intro: '奥希替尼是第三代 EGFR 酪氨酸激酶抑制剂，主要用于特定 EGFR 变异的非小细胞肺癌。是否适用取决于分子检测、疾病阶段和既往治疗，治疗期间需同时监测疗效、症状和心肺安全。',
     category: '靶向治疗',
     heroImage: {
@@ -159,8 +159,8 @@ const drugArticleRecords: Article[] = [
     slug: 'cyclophosphamide',
     eyebrow: '药物资讯 · 化学治疗',
     title: '环磷酰胺（Cyclophosphamide）',
-    summary: '环磷酰胺的商品名之一，属于常用于联合方案的烷化剂。',
-    intro: '安道生（Endoxan）是环磷酰胺（Cyclophosphamide）的商品名之一。环磷酰胺是烷化剂，常用于联合方案。治疗期间需关注累计治疗、血细胞变化、感染、膀胱保护和生育计划。',
+    summary: '烷化剂，用于多种恶性肿瘤的单药或联合治疗。',
+    intro: '环磷酰胺是烷化剂类前药，可用于多种恶性肿瘤的单药或联合治疗。安道生（Endoxan）是其商品名之一。治疗期间需关注累计治疗、血细胞变化、感染、膀胱保护和生育计划。',
     category: '化学治疗',
     heroImage: {
       src: '/images/drugs/cyclophosphamide-package-3x2-native.webp',
@@ -215,7 +215,7 @@ const drugArticleRecords: Article[] = [
     slug: 'tamoxifen',
     eyebrow: '药物资讯 · 内分泌治疗',
     title: '他莫昔芬（Tamoxifen）',
-    summary: '选择性雌激素受体调节剂，主要用于激素受体阳性乳腺癌的内分泌治疗。',
+    summary: '选择性雌激素受体调节剂，用于激素受体阳性乳腺癌的内分泌治疗。',
     intro: '他莫昔芬是一种选择性雌激素受体调节剂，可在乳腺组织中阻断雌激素信号。临床应用需结合激素受体状态、绝经状态、疾病阶段、血栓风险和妇科病史评估。',
     category: '内分泌治疗',
     heroImage: {
@@ -271,7 +271,7 @@ const drugArticleRecords: Article[] = [
     slug: 'anastrozole',
     eyebrow: '药物资讯 · 内分泌治疗',
     title: '阿那曲唑（Anastrozole）',
-    summary: '芳香化酶抑制剂，主要用于绝经后激素受体阳性乳腺癌。',
+    summary: '芳香化酶抑制剂，用于绝经后激素受体阳性乳腺癌的内分泌治疗。',
     intro: '阿那曲唑是一种非甾体芳香化酶抑制剂，可降低绝经后体内雌激素生成。临床应用需结合激素受体状态、绝经状态、骨骼健康、血脂和既往内分泌治疗评估。',
     category: '内分泌治疗',
     heroImage: {
@@ -327,7 +327,7 @@ const drugArticleRecords: Article[] = [
     slug: 'capivasertib',
     eyebrow: '药物资讯 · 靶向治疗',
     title: '卡帕塞替尼（Capivasertib）',
-    summary: 'AKT 抑制剂，用于特定生物标志物阳性的晚期乳腺癌及 PTEN 缺失的转移性前列腺癌。',
+    summary: 'AKT 抑制剂，用于特定分子改变的晚期乳腺癌及 PTEN 缺失的转移性前列腺癌。',
     intro: '卡帕塞替尼是一种口服 AKT 抑制剂，用于部分存在 PIK3CA、AKT1 或 PTEN 改变的晚期乳腺癌，并在部分地区用于 PTEN 缺失的转移性前列腺癌。适用范围需按当地批准条件、生物标志物和联合方案确认。',
     category: '靶向治疗',
     heroImage: {
@@ -383,7 +383,7 @@ const drugArticleRecords: Article[] = [
     slug: 'zolbetuximab',
     eyebrow: '药物资讯 · 靶向治疗',
     title: '佐妥昔单抗（Zolbetuximab）',
-    summary: '靶向 CLDN18.2 的单克隆抗体，用于特定胃癌和胃食管交界处癌的联合治疗。',
+    summary: 'CLDN18.2 靶向单克隆抗体，与化疗联合用于特定胃癌和胃食管交界处癌。',
     intro: '佐妥昔单抗是一种靶向 CLDN18.2 的单克隆抗体，与含氟尿嘧啶类和铂类药物的化疗联合，用于特定 CLDN18.2 阳性、HER2 阴性的晚期胃或胃食管交界处腺癌。',
     category: '靶向治疗',
     heroImage: {
