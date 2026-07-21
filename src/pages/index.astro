@@ -12,6 +12,11 @@ const pickArticles = <T extends { slug: string }>(articles: T[], slugs: readonly
   });
 const featuredDrugs = pickArticles(drugs, featuredDrugSlugs);
 const featuredCancers = pickArticles(cancers, featuredCancerSlugs);
+const heroDrugNames: Record<string, string> = {
+  tamoxifen: '他莫昔芬',
+  anastrozole: '阿那曲唑（Arimidex）',
+  capivasertib: '卡帕塞替尼',
+};
 ---
 <BaseLayout title="香港药物资讯、癌症治疗与第二诊疗意见" description="港医桥/HK CareBridge 提供香港药物资讯、癌症诊断与治疗资料，以及第二诊疗意见信息。">
   <section class="hero">
@@ -29,7 +34,7 @@ const featuredCancers = pickArticles(cancers, featuredCancerSlugs);
         {featuredDrugs.map((article) => (
           <article class="hero-drug-item">
             <a class="hero-drug-image" href={`/drugs/${article.slug}/`}><img src={article.heroImage.src} alt={article.heroImage.alt} /></a>
-            <div><h3><a href={`/drugs/${article.slug}/`}>{article.title}</a></h3><p>{article.summary}</p><a class="hero-drug-link" href={`/drugs/${article.slug}/`}>药物详情 <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+            <div><h3><a href={`/drugs/${article.slug}/`}>{heroDrugNames[article.slug] ?? article.title}</a></h3><p>{article.summary}</p><a class="hero-drug-link" href={`/drugs/${article.slug}/`}>药物详情 <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
           </article>
         ))}
       </div>
