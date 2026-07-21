@@ -13,7 +13,7 @@ const related = (base === 'drugs' ? drugArticles : cancerArticles)
   .slice(0, 2);
 ---
 <BaseLayout title={article.title} description={article.summary}>
-  <article class="article-layout">
+  <article class:list={['article-layout', base === 'drugs' && 'drug-article']}>
     <header class="article-header">
       <h1>{article.title}</h1>
       <p class="article-header-summary">{article.summary}</p>

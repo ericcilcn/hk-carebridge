@@ -40,5 +40,5 @@ async function fromDirectus(collection: keyof Schema, fallback: Article[], prese
   }
 }
 
-export const getDrugArticles = () => fromDirectus('drug_articles', drugArticles);
+export const getDrugArticles = () => fromDirectus('drug_articles', drugArticles, true);
 export const getCancerArticles = () => fromDirectus('cancer_articles', cancerArticles, true);
