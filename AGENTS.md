@@ -9,7 +9,7 @@ When implementing from a selected generated mock, treat that image as the source
 ## Durable Brand And Content Decisions
 
 - Use the brand name exactly as `港医桥/HK CareBridge`; do not introduce another placeholder identity.
-- Position the site as `香港医疗信息与就医准备`; avoid travel-led language.
+- Position the site around `香港药物资讯、癌症治疗与第二诊疗意见`; avoid travel-led language and direct medicine-sales claims.
 - Use `微信询药` in drug contexts and link it to `/contact/#drug-inquiry`. Use `微信咨询` for second-opinion and general medical-information contexts and link it to `/contact/#general-consultation`. Refer to the channel only as `微信`.
 - Drug inquiries may include a medicine name, current prescription or treatment plan, current medicines and questions. Prescription assessment is completed by a Hong Kong registered doctor; medicine supply is completed by a licensed pharmacy or medical institution.
 - Keep public copy positive and action-oriented. Put the single neutral medical note in the footer: `内容用于科普与沟通准备，具体诊疗请咨询医生。`
